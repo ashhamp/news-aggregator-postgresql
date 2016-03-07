@@ -1,0 +1,32 @@
+<h2>Add Article</h2>
+
+
+<p>
+  <% if @error == true %>
+    <% @errors.each do |error| %>
+      <%= error %> </br>
+    <% end %>
+  <% end %>
+</p>
+
+<div class="container">
+  <form action="/articles/new" method="post">
+    <p>
+      <label for="title">Article Title:</label>
+        <input type="text" id="title" name="title" size="35" value="<%=@previous_title%>" required>
+    </p>
+    <p>
+      <label for="url"> URL: </label>
+        <input type="url" id="url" name="url" size="35" required value="<%=@previous_url%>">
+    </p>
+    <p>
+      <label for="description"> Description: </label>
+        <input type="text" id="description" name ="description" size="35" required value="<%=@previous_description%>">
+    </p>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+  <a href="/articles">Back to Articles</a>
+</div>

@@ -1,0 +1,16 @@
+
+
+<h2>Tickle Your Brain With These Articles</h2>
+
+    <dl>
+      <% @articles.each do |line| %>
+      <dt>
+      <a  href="<%=line.info["url"]%>" target="_blank"><%=line.info["title"]%></a>
+    </dt>
+      <dd>
+        <%=line.info["description"]%>
+      </dd>
+      <% end %>
+    </dl>
+
+<a class="backlink" href="/articles/new"> Add Article </a>
